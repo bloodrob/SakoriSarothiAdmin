@@ -100,7 +100,7 @@ public class AdminUploadJob extends AppCompatActivity {
             }
         });
 
-        //sendJobNoti method start
+        //uploadJObDetails method start
         uploadJobDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.r19.sakorisarothiadmin.AdminUploadJob">
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="Send the job notification"/>
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:textColor="#000000"
+        android:text="Name of Job"
+        android:layout_below="@+id/textView29"
+        android:layout_toStartOf="@+id/upload_job_details" />
+
+    <EditText
+        android:id="@+id/name_of_job"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView31"
+        android:background="@drawable/btn_1"
+        android:layout_alignStart="@+id/textView31"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:inputType="textPersonName"
+        />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:textColor="#000000"
+        android:text="Category"
+        android:layout_below="@+id/name_of_job"
+        android:layout_alignStart="@+id/name_of_job" />
+    <Spinner
+        android:id="@+id/subject_of_job"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:background="@drawable/btn_1"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView36"
+        android:layout_alignStart="@+id/textView36"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="#000000"
+        android:text="Last Date"
+        android:layout_below="@+id/subject_of_job"
+        android:layout_alignStart="@+id/subject_of_job" />
+    <EditText
+        android:id="@+id/last_date"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:editable="false"
+        android:focusable="false"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:background="@drawable/btn_1"
+        android:layout_below="@+id/textView47"
+        android:layout_alignStart="@+id/textView47"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:textColor="#000000"
+        android:text="Stipen/Salary"
+        android:layout_below="@+id/last_date"
+        android:layout_alignStart="@+id/last_date" />
+    <EditText
+        android:id="@+id/stipen_salary"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:background="@drawable/btn_1"
+        android:inputType="textPersonName"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/textView40"
+        android:layout_alignStart="@+id/textView40"  />
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="#000000"
+        android:text="Experience"
+        android:layout_below="@+id/stipen_salary"
+        android:layout_alignStart="@+id/stipen_salary" />
+    <EditText
+        android:id="@+id/experience"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:background="@drawable/btn_1"
+        android:inputType="textPersonName"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/textView41"
+        android:layout_alignStart="@+id/textView41" />
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:textColor="#000000"
+        android:text="Details of the job"
+        android:layout_below="@+id/experience"
+        android:layout_alignStart="@+id/experience" />
+
+    <EditText
+        android:id="@+id/details_of_job"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:background="@drawable/btn_1"
+        android:inputType="textPersonName"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/textView42"
+        android:layout_alignStart="@+id/textView42" />
+
+    <Button
+        android:id="@+id/upload_job_details"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_4"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="Upload Job Details"
+        android:layout_below="@+id/details_of_job"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+
+</RelativeLayout>

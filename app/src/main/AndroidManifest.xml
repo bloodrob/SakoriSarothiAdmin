@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AdminLogin" />
-        <activity android:name=".AdminMainActivity"></activity>
+        <activity android:name=".AdminMainActivity" />
+        <activity android:name=".AdminUploadJob" />
+        <activity android:name=".AdminUploadJobDetailsPdf"></activity>
     </application>
 
 </manifest>

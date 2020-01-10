@@ -16,4 +16,13 @@
         android:layout_marginStart="137dp"
         android:layout_marginTop="167dp"
         android:text="You Are Admin" />
+
+    <Button
+        android:id="@+id/upload_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="34dp"
+        android:text="Upload Job" />
 </RelativeLayout>

@@ -32,6 +32,11 @@ public class AdminLogin extends AppCompatActivity {
         login = (Button)findViewById(R.id.AdminLogin);
         auth = FirebaseAuth.getInstance();
 
+        // cheking the session
+        if (auth.getCurrentUser() != null) {
+            Intent intent = new Intent(AdminLogin.this, AdminMainActivity.class);
+            startActivity(intent);
+        }
         // Set up onclick listener for admin login button
         login.setOnClickListener(new View.OnClickListener() {
             @Override

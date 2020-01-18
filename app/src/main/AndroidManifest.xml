@@ -16,10 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name="zoftino.com.firebase.fcm.DealsMessagingService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
         <activity android:name=".AdminLogin" />
         <activity android:name=".AdminMainActivity" />
         <activity android:name=".AdminUploadJob" />
-        <activity android:name=".AdminUploadJobDetailsPdf"></activity>
+        <activity android:name=".AdminUploadJobDetailsPdf" />
+        <activity android:name=".AdminPushNotification"></activity>
     </application>
 
 </manifest>

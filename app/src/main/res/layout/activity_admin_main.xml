@@ -25,4 +25,13 @@
         android:layout_below="@+id/textView"
         android:layout_marginTop="34dp"
         android:text="Upload Job" />
+    <Button
+        android:id="@+id/to_log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/upload_job"
+        android:layout_marginTop="40dp"
+        android:text="Log Out"
+        />
 </RelativeLayout>

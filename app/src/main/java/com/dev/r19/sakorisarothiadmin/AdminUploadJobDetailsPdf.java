@@ -152,7 +152,7 @@ public class AdminUploadJobDetailsPdf extends AppCompatActivity {
         // pushing the value
         refToDatbaseToUrl.child(JobName+"/MyFileUrl").setValue(MyFileUrl.toString());
         // intent to AdminSendjobNotificatio
-        Intent intent = new Intent(AdminUploadJobDetailsPdf.this, AdminMainActivity.class);
+        Intent intent = new Intent(AdminUploadJobDetailsPdf.this, AdminPushNotification.class);
         startActivity(intent);
     }
 }

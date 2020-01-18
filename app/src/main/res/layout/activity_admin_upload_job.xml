@@ -5,18 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.dev.r19.sakorisarothiadmin.AdminUploadJob">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/fram12">
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000"
+        android:layout_marginTop="29dp"
+        android:layout_marginLeft="65dp"
+        android:text="Send the job notification"
+        android:textAlignment="center"
+        android:textColor="#483D8B"
         android:textSize="18dp"
-        android:textStyle="bold"
-        android:text="Send the job notification"/>
+        android:textStyle="bold" />
+</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fram12">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/textView31"
@@ -24,22 +38,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:text="Name of Job"
-        android:layout_below="@+id/textView29"
         android:layout_toStartOf="@+id/upload_job_details" />
 
     <EditText
         android:id="@+id/name_of_job"
         android:layout_width="320dp"
-        android:layout_height="40dp"
+        android:layout_height="120dp"
         android:layout_below="@+id/textView31"
         android:background="@drawable/btn_1"
         android:layout_alignStart="@+id/textView31"
         android:textCursorDrawable="@drawable/color_cursor"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:inputType="textPersonName"
+        android:gravity="top|left"
+        android:textColor="#2F4F4F"
+        android:textSize="12dp"
+        android:inputType="textMultiLine"
         />
 
     <TextView
@@ -48,6 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:text="Category"
         android:layout_below="@+id/name_of_job"
         android:layout_alignStart="@+id/name_of_job" />
@@ -57,7 +73,7 @@
         android:layout_height="40dp"
         android:textCursorDrawable="@drawable/color_cursor"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#2F4F4F"
         android:background="@drawable/btn_1"
         android:inputType="textPersonName"
         android:layout_below="@+id/textView36"
@@ -69,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:text="Last Date"
         android:layout_below="@+id/subject_of_job"
         android:layout_alignStart="@+id/subject_of_job" />
@@ -80,7 +97,7 @@
         android:editable="false"
         android:focusable="false"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#2F4F4F"
         android:background="@drawable/btn_1"
         android:layout_below="@+id/textView47"
         android:layout_alignStart="@+id/textView47"
@@ -91,18 +108,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:text="Stipen/Salary"
         android:layout_below="@+id/last_date"
         android:layout_alignStart="@+id/last_date" />
     <EditText
         android:id="@+id/stipen_salary"
         android:layout_width="320dp"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
         android:textCursorDrawable="@drawable/color_cursor"
-        android:textAlignment="center"
-        android:textColor="#000000"
+        android:gravity="top|left"
+        android:textColor="#2F4F4F"
+        android:textSize="12dp"
         android:background="@drawable/btn_1"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:layout_centerVertical="true"
         android:layout_below="@+id/textView40"
         android:layout_alignStart="@+id/textView40"  />
@@ -112,18 +131,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:text="Experience"
         android:layout_below="@+id/stipen_salary"
         android:layout_alignStart="@+id/stipen_salary" />
     <EditText
         android:id="@+id/experience"
         android:layout_width="320dp"
-        android:layout_height="40dp"
+        android:layout_height="100dp"
         android:textCursorDrawable="@drawable/color_cursor"
-        android:textAlignment="center"
-        android:textColor="#000000"
+        android:gravity="top|left"
+        android:textColor="#2F4F4F"
+        android:textSize="12dp"
         android:background="@drawable/btn_1"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:layout_centerVertical="true"
         android:layout_below="@+id/textView41"
         android:layout_alignStart="@+id/textView41" />
@@ -132,6 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
+        android:textStyle="bold"
         android:textColor="#000000"
         android:text="Details of the job"
         android:layout_below="@+id/experience"
@@ -140,12 +162,13 @@
     <EditText
         android:id="@+id/details_of_job"
         android:layout_width="320dp"
-        android:layout_height="40dp"
+        android:layout_height="180dp"
         android:textCursorDrawable="@drawable/color_cursor"
-        android:textAlignment="center"
-        android:textColor="#000000"
+        android:gravity="top|left"
+        android:textColor="#2F4F4F"
+        android:textSize="12dp"
         android:background="@drawable/btn_1"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:layout_centerVertical="true"
         android:layout_below="@+id/textView42"
         android:layout_alignStart="@+id/textView42" />
@@ -162,5 +185,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
 
-
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

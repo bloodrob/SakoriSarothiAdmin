@@ -1,7 +1,7 @@
 package com.dev.r19.sakorisarothiadmin;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminPushNotification extends AppCompatActivity {
 

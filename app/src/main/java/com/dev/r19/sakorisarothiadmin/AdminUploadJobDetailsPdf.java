@@ -21,40 +21,31 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import static com.dev.r19.sakorisarothiadmin.AdminUploadJob.JobExperience;
-import static com.dev.r19.sakorisarothiadmin.AdminUploadJob.LastDate;
-import static com.dev.r19.sakorisarothiadmin.AdminUploadJob.StiepndSalary;
-
 public class AdminUploadJobDetailsPdf extends AppCompatActivity {
 
     // string to get the value from other class
     String getTheName;
     //button and imageview
-    private Button choosePdf, uploadPdf;
-    private TextView showSuccessPdfUpload, getThePdfName;
+    private Button choosePdf;
+    private Button uploadPdf;
+    private TextView showSuccessPdfUpload;
+    private TextView getThePdfName;
     // uri to set a path to store the file
     private Uri pathToPdf;
     // use in the file chooser as a passed code
     final static int PICK_PDF_CODE = 2342;
     //Firebase strorage variable
-    FirebaseStorage database;
-    StorageReference stref;
+    private FirebaseStorage database;
+    private StorageReference stref;
     // Firebase Database Variable
     private FirebaseDatabase databaseToUrl;
     private DatabaseReference refToDatbaseToUrl;
 
-    //static String for firebase
-    static String JobName, JobSubject, JobDetails;
+    private String JobName;
     // for set up progressbar
-    ProgressDialog pdD;
-    // static string
-    static String getTheFileName;
-    //static string to passed the data from afunction
-    static String myResult;
+    private ProgressDialog pdD;
     // stroring the download url;
-    static String MyFileUrl;
-    // static string to use the get key value in another page
-    static String getPushedIdForUse;
+    private String MyFileUrl;
     //set up a annotaion for comtable with adnroid version. here it is for Oreo. Api level 26
     @TargetApi(Build.VERSION_CODES.O)
     @Override
@@ -70,8 +61,9 @@ public class AdminUploadJobDetailsPdf extends AppCompatActivity {
         pdD = new ProgressDialog(this);
         pdD.setTitle("Uploading the file, Please don't press back.");
         pdD.setCanceledOnTouchOutside(false);
-        // getting the string from AdminSendJobNotification class
-        getTheName = AdminUploadJob.JobName.toString().trim();
+        // getting the string from AdminUploadJob class through intent
+        Intent intent = getIntent();
+        getTheName = intent.getStringExtra("NameOfJob");
         //listener for choose the image
         choosePdf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,7 +125,7 @@ public class AdminUploadJobDetailsPdf extends AppCompatActivity {
                         // method to get the node and add a new data on the child node
                         JobName = getTheName.toString().trim();
                         databaseToUrl = FirebaseDatabase.getInstance();
-                        addUrlInNewNode(JobName, JobSubject,LastDate,JobExperience,StiepndSalary, JobDetails, MyFileUrl);
+                        addUrlInNewNode();
                     }
                 });
             }
@@ -146,8 +138,7 @@ public class AdminUploadJobDetailsPdf extends AppCompatActivity {
         });
     }
     // function of add the data in a new node of existing data
-    private void addUrlInNewNode(String JobName, String JobSubject, String LastDate, String JobExperience, String StipendSalary, String JObDetails, String MyFileUrl) {
-        AdminJobUploadModel jobUpMod = new AdminJobUploadModel(JobName, JobSubject,LastDate,JobExperience,StiepndSalary, JobDetails, MyFileUrl);
+    private void addUrlInNewNode() {
         refToDatbaseToUrl = databaseToUrl.getReference("UploadedJobDetails");
         // pushing the value
         refToDatbaseToUrl.child(JobName+"/MyFileUrl").setValue(MyFileUrl.toString());

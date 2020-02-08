@@ -7,7 +7,7 @@
     tools:context="com.dev.r19.sakorisarothiadmin.AdminUploadJob">
 <FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="59dp"
     android:id="@+id/fram12">
 
     <TextView
@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp"
-        android:layout_marginLeft="65dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="103dp"
         android:text="Send the job notification"
         android:textAlignment="center"
         android:textColor="#483D8B"

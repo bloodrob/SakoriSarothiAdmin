@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_2"
     tools:context="com.dev.r19.sakorisarothiadmin.AdminPushNotification">
 
     <Button
         android:id="@+id/send_noti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginLeft="110dp"
+        android:background="@drawable/btn_2"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20dp"
         android:text="Push Notification" />
 </RelativeLayout>

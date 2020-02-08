@@ -31,18 +31,26 @@ import java.util.Locale;
 public class AdminUploadJob extends AppCompatActivity {
 
     //variable for edittext and button
-    private EditText nameOfJob, lastDateOfJob, stipenSalaryOfJob,experienecrOfJOb, detailsOfJod;
+    private EditText nameOfJob;
+    private EditText lastDateOfJob;
+    private EditText stipenSalaryOfJob;
+    private EditText experienecrOfJOb;
+    private EditText detailsOfJod;
     private Spinner categoryOfJob ;
     private Button uploadJobDetails;
-    //static string for input value
-    static String JobName, JobSubject,LastDate,JobExperience,StiepndSalary, JobDetails, MyFileUrl;
+
+    private String JobName;
+    private String JobSubject;
+    private String LastDate;
+    private String JobExperience;
+    private String StiepndSalary;
+    private String JobDetails;
+    private String MyFileUrl;
     //use to get system times
     int requesttime;
     //arraylist for catedory and last date
     List<String> CategoryList;
     // for datepicker
-   // public static DatePickerDialog.OnDateSetListener date;
-    //calendar
     static Calendar myCalendar = Calendar.getInstance();
     // firebase to store job details
     FirebaseDatabase database;
@@ -72,16 +80,16 @@ public class AdminUploadJob extends AppCompatActivity {
         //initialization and assign of arraylist of category
         CategoryList = new ArrayList<String>();
         CategoryList.add("Bank");
-        CategoryList.add("State Govt.");
-        CategoryList.add("Central Govt.");
+        CategoryList.add("State_Govt");
+        CategoryList.add("Central_Govt");
         CategoryList.add("Railway");
         CategoryList.add("Oil");
         CategoryList.add("Ongc");
-        CategoryList.add("School/College/University");
+        CategoryList.add("Educational_Institute");
         CategoryList.add("Research");
-        CategoryList.add("It company");
-        CategoryList.add("Private Company");
-        CategoryList.add("General Recruitment");
+        CategoryList.add("It_Company");
+        CategoryList.add("Private_Company");
+        CategoryList.add("General_Recruitment");
         CategoryList.add("Insurance");
         //assigning value to the arrayadaptor
         final ArrayAdapter<String> getCategoryList = new ArrayAdapter<String>(AdminUploadJob.this, android.R.layout.simple_spinner_item, CategoryList);
@@ -92,6 +100,7 @@ public class AdminUploadJob extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 JobSubject = parent.getItemAtPosition(position).toString().trim();
+                AdminPushNotification.subsTopic = JobSubject;
             }
 
             @Override
@@ -110,22 +119,30 @@ public class AdminUploadJob extends AppCompatActivity {
                 JobDetails = detailsOfJod.getText().toString().trim();
                 //Context for use in setLatestEventInfo
                 Context context = getApplicationContext();
-
+                // sending to the static variable to AdminPushNotification class
+                AdminPushNotification.takeJobName = JobName.toString().trim();
+                AdminPushNotification.takeLastDate = LastDate.toString().trim();
 
                 // firebase work to save the data
                 database = FirebaseDatabase.getInstance();
                 ref = database.getReference("UploadedJobDetails");
                 // mthod to assign key value
-                SaveJobDetails(JobName, JobSubject,LastDate,JobExperience,StiepndSalary, JobDetails, MyFileUrl);
+                SaveJobDetails();
                 Intent intent = new Intent(AdminUploadJob.this, AdminUploadJobDetailsPdf.class);
+                intent.putExtra("NameOfJob", JobName);
                 startActivity(intent);
             }
         });
     }
     // method for save data
-    private void SaveJobDetails(String JobName, String JobSubject, String LastDate, String JobExperience, String StipendSalary, String JObDetails, String MyFileUrl) {
-        AdminJobUploadModel jobUp = new AdminJobUploadModel(JobName, JobSubject,LastDate,JobExperience,StiepndSalary, JobDetails, MyFileUrl);
-        JobName = jobUp.JobName;
+    private void SaveJobDetails() {
+        AdminJobUploadModel jobUp = new AdminJobUploadModel();
+        jobUp.setJobName(JobName);
+        jobUp.setJobSubject(JobSubject);
+        jobUp.setJobDetails(JobDetails);
+        jobUp.setJobExperience(JobExperience);
+        jobUp.setLastDate(LastDate);
+        jobUp.setStiepndSalary(StiepndSalary);
         ref.child(JobName).setValue(jobUp);
         // method to save data
         CreateToSaveData();

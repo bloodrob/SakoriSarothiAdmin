@@ -64,7 +64,7 @@ public class AdminPushNotification extends AppCompatActivity {
             notiDetails.put("body",takeLastDate);
 
             JSONObject notiData = new JSONObject();
-            notiData.put("jobDate","new job");
+            notiData.put("nameOfTheJob",takeJobName);
 
            // JSONObject notiExtraData = new JSONObject();
           //  notiExtraData.put("notificationDetails", notiDetails);

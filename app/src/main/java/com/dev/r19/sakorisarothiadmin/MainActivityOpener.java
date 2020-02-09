@@ -8,7 +8,6 @@ import android.widget.Button;
 
 public class MainActivityOpener extends AppCompatActivity {
 
-    private Button ToLogIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
